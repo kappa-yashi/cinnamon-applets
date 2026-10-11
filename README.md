@@ -36,21 +36,28 @@ instances where it makes sense.
 
 ## Install
 
-**Quick (all of them):**
+### Download (easiest)
+
+Grab a zip from the **[latest release](https://github.com/kappa-yashi/cinnamon-applets/releases/latest)**:
+
+- **All applets** — `kappayashi-applets-all-vX.Y.Z.zip`. Extract it and run
+  `./install.sh` inside the folder (or `./install.sh separator@kappayashi` for
+  just some).
+- **One applet** — e.g. `separator@kappayashi-vX.Y.Z.zip`. Extract it straight
+  into `~/.local/share/cinnamon/applets/`:
+
+  ```bash
+  unzip separator@kappayashi-v*.zip -d ~/.local/share/cinnamon/applets/
+  ```
+
+### From git
 
 ```bash
 git clone https://github.com/kappa-yashi/cinnamon-applets.git
 cd cinnamon-applets
-./install.sh
+./install.sh                                         # all
+./install.sh separator@kappayashi sessionManager@kappayashi   # or pick
 ```
-
-**Just one or a few:**
-
-```bash
-./install.sh separator@kappayashi sessionManager@kappayashi
-```
-
-**Manual:** copy the applet folder(s) into `~/.local/share/cinnamon/applets/`.
 
 Then reload Cinnamon (`Ctrl+Alt+Esc`, or `Alt+F2` → `r`) and add the applet
 from **System Settings → Applets**. Right-click an applet → **Configure** for
