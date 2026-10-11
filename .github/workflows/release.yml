@@ -5,8 +5,12 @@
 #   2. "Choose a tag" -> type e.g. v1.0.1 -> "Create new tag on publish"
 #   3. Title + notes -> "Publish release"
 # This workflow then uploads:
-#   - kappayashi-applets-all-<tag>.zip   (all applets + install.sh)
-#   - <uuid>-<tag>.zip                   (one per applet, <uuid>/ at the root)
+#   - kappayashi-applets-all-<tag>.zip   (all applets + install.sh; the
+#                                         collection's version = release tag)
+#   - <uuid>-v<version>.zip              (one per applet, <uuid>/ at the root;
+#                                         version read from its metadata.json)
+#
+# Bump an applet's "version" in its metadata.json when you change it.
 
 name: Release zips
 
@@ -41,10 +45,14 @@ jobs:
 
           APPS=$(cd "$STAGE" && ls -d *@kappayashi)
 
-          # one zip per applet, with the GPL text shipped inside
+          # one zip per applet, named with the applet's OWN version from
+          # its metadata.json (e.g. workspace-switcher@kappayashi-v2.1.0.zip),
+          # with the GPL text shipped inside
           for u in $APPS; do
+            V=$(jq -r '.version // empty' "$STAGE/$u/metadata.json")
+            if [ -z "$V" ]; then echo "::error::$u/metadata.json has no version"; exit 1; fi
             cp "$STAGE/LICENSE" "$STAGE/$u/LICENSE"
-            (cd "$STAGE" && zip -qr -X "$OUT/$u-$TAG.zip" "$u")
+            (cd "$STAGE" && zip -qr -X "$OUT/$u-v$V.zip" "$u")
             rm "$STAGE/$u/LICENSE"
           done
 

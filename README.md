@@ -43,8 +43,9 @@ Grab a zip from the **[latest release](https://github.com/kappa-yashi/cinnamon-a
 - **All applets** — `kappayashi-applets-all-vX.Y.Z.zip`. Extract it and run
   `./install.sh` inside the folder (or `./install.sh separator@kappayashi` for
   just some).
-- **One applet** — e.g. `separator@kappayashi-vX.Y.Z.zip`. Extract it straight
-  into `~/.local/share/cinnamon/applets/`:
+- **One applet** — e.g. `separator@kappayashi-vX.Y.Z.zip` (each applet zip
+  carries that applet's own version). Extract it straight into
+  `~/.local/share/cinnamon/applets/`:
 
   ```bash
   unzip separator@kappayashi-v*.zip -d ~/.local/share/cinnamon/applets/
