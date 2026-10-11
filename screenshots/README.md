@@ -1,12 +1,6 @@
 # Screenshots
 
-Drop preview images here, named by applet uuid, e.g.:
+Panel strips cropped from real desktops (wallpapers left out on purpose).
 
-- `separator@kappayashi.png`
-- `launcher@kappayashi.png`
-- `workspace-switcher@kappayashi.png`
-- `musiccontrols@kappayashi.png`
-- `grouped-window-list@kappayashi.png`
-- `sessionManager@kappayashi.png`
-
-They are referenced from the main `README.md`.
+- `panels-detail.png` — left half, zoomed, shows the separator edge shapes
+- `panels.png` — the full panel width
