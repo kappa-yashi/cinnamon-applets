@@ -1,0 +1,64 @@
+# Builds the release zips and attaches them to a GitHub Release.
+#
+# How to cut a release:
+#   1. Releases -> "Draft a new release"
+#   2. "Choose a tag" -> type e.g. v1.0.1 -> "Create new tag on publish"
+#   3. Title + notes -> "Publish release"
+# This workflow then uploads:
+#   - kappayashi-applets-all-<tag>.zip   (all applets + install.sh)
+#   - <uuid>-<tag>.zip                   (one per applet, <uuid>/ at the root)
+
+name: Release zips
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Existing release tag to (re)build assets for, e.g. v1.0.0"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      TAG: ${{ github.event.release.tag_name || inputs.tag }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.release.tag_name || inputs.tag }}
+
+      - name: Build zips
+        run: |
+          set -euo pipefail
+          OUT="$RUNNER_TEMP/dist"; mkdir -p "$OUT"
+          STAGE="$RUNNER_TEMP/stage"; mkdir -p "$STAGE"
+          git archive HEAD | tar -x -C "$STAGE"
+
+          APPS=$(cd "$STAGE" && ls -d *@kappayashi)
+
+          # one zip per applet, with the GPL text shipped inside
+          for u in $APPS; do
+            cp "$STAGE/LICENSE" "$STAGE/$u/LICENSE"
+            (cd "$STAGE" && zip -qr -X "$OUT/$u-$TAG.zip" "$u")
+            rm "$STAGE/$u/LICENSE"
+          done
+
+          # all-in-one
+          ALL="kappayashi-applets-$TAG"
+          mkdir -p "$RUNNER_TEMP/$ALL"
+          for u in $APPS; do cp -r "$STAGE/$u" "$RUNNER_TEMP/$ALL/"; done
+          cp "$STAGE"/{install.sh,README.md,LICENSE,CREDITS.md} "$RUNNER_TEMP/$ALL/"
+          chmod +x "$RUNNER_TEMP/$ALL/install.sh"
+          (cd "$RUNNER_TEMP" && zip -qr -X "$OUT/kappayashi-applets-all-$TAG.zip" "$ALL")
+
+          ls -la "$OUT"
+
+      - name: Attach to release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release upload "$TAG" "$RUNNER_TEMP"/dist/*.zip --clobber --repo "$GITHUB_REPOSITORY"
