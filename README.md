@@ -136,11 +136,28 @@ fill), Workspace Switcher (pill indicators) and Media Controls:
 Some of these started as forks of community applets and were then rewritten.
 See [`CREDITS.md`](CREDITS.md) for origins and attribution.
 
+## Disclaimer
+
+These applets are provided **as is**, with no warranty of any kind. You install
+and use them **at your own risk**. They change how your panel looks and
+behaves, and the Session Manager can shut down, restart, suspend or log out
+your system — always save your work first.
+
+This is a personal, non-commercial project. There is **no obligation** to
+provide updates, bug fixes, compatibility with future Cinnamon versions, or
+support of any kind. Issues and pull requests may be looked at when time
+allows, or not at all.
+
+The author is not liable for any damage, data loss or other problems that
+result from using this software. See sections 15–16 of the
+[GPL-3.0 license](LICENSE) for the full warranty disclaimer and limitation
+of liability.
+
 ## License
 
 [GPL-3.0](LICENSE).
 
-## Support
+## Supporting the project
 
-If these are useful to you, you can support the project through the
+If these are useful to you, you can support the work through the
 kappa.yashi site: **[www.kappayashi.page](https://www.kappayashi.page)**.
