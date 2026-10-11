@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="assets/applets.png" alt="kappa.yashi" width="140" />
+  <img src="assets/applets.png" alt="kappa.yashi" width="300" />
 
   # kappa.yashi · Cinnamon applets
 
