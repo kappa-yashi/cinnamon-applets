@@ -1,0 +1,25 @@
+/* The applet container: no padding/margins so the colored block sits flush. */
+.kappayashi-separator-box {
+    padding: 0;
+    margin: 0;
+    spacing: 0;
+    background-color: transparent;
+}
+
+/* A separator is non-interactive: never show the default applet highlight. */
+.kappayashi-separator-box:hover,
+.kappayashi-separator-box:active,
+.kappayashi-separator-box:focus,
+.kappayashi-separator-box:checked {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+/* The colored block itself. Its background-color and size are applied inline
+   from the applet settings (fill color, opacity, and computed width/height),
+   so only the smoothing transition lives here. */
+.kappayashi-separator {
+    transition-property: width, height, background-color;
+    transition-duration: 150ms;
+}

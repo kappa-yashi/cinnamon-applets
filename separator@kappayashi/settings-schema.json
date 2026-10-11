@@ -1,0 +1,127 @@
+{
+    "size-mode": {
+        "type": "combobox",
+        "default": "zone",
+        "description": "Width mode",
+        "tooltip": "\"Its own zone\": the separator takes the given share of the panel zone it sits in (left / center / right). \"Panel length\": measured against the full panel, more stable. \"Fill free space\": ignores the percentage and dynamically expands to fill whatever panel space the other applets leave, absorbing their size changes.",
+        "options": {
+            "Its own zone": "zone",
+            "Panel length": "panel",
+            "Fill free space (dynamic)": "dynamic"
+        }
+    },
+    "width-percent": {
+        "type": "spinbutton",
+        "default": 10,
+        "min": 0,
+        "max": 95,
+        "step": 0.5,
+        "units": "%",
+        "description": "Separator width (ignored in Fill free space mode)"
+    },
+    "min-pixels": {
+        "type": "spinbutton",
+        "default": 0,
+        "min": 0,
+        "max": 2000,
+        "step": 1,
+        "units": "px",
+        "description": "Minimum width (never smaller than this)",
+        "tooltip": "Guarantees the separator stays visible even when the computed percentage would be tiny. Set to 0 to disable."
+    },
+    "edge-left": {
+        "type": "combobox",
+        "default": "flat",
+        "description": "Left edge",
+        "options": {
+            "Flat": "flat",
+            "Rounded (pill)": "round",
+            "Circular notch": "round-notch",
+            "Pointed": "point",
+            "V-notch": "notch",
+            "Slant up": "slant-up",
+            "Slant down": "slant-down"
+        }
+    },
+    "edge-right": {
+        "type": "combobox",
+        "default": "flat",
+        "description": "Right edge",
+        "options": {
+            "Flat": "flat",
+            "Rounded (pill)": "round",
+            "Circular notch": "round-notch",
+            "Pointed": "point",
+            "V-notch": "notch",
+            "Slant up": "slant-up",
+            "Slant down": "slant-down"
+        }
+    },
+    "edge-size-left": {
+        "type": "spinbutton",
+        "default": 0,
+        "min": 0,
+        "max": 200,
+        "step": 1,
+        "units": "px",
+        "description": "Left edge size (0 = automatic)",
+        "tooltip": "Depth of the left angled / pointed end and the radius of the left circular notch, in pixels. 0 scales automatically to the panel height. Ignored for Flat and Rounded."
+    },
+    "edge-size-right": {
+        "type": "spinbutton",
+        "default": 0,
+        "min": 0,
+        "max": 200,
+        "step": 1,
+        "units": "px",
+        "description": "Right edge size (0 = automatic)",
+        "tooltip": "Depth of the right angled / pointed end and the radius of the right circular notch, in pixels. 0 scales automatically to the panel height. Ignored for Flat and Rounded."
+    },
+    "fill-type": {
+        "type": "combobox",
+        "default": "solid",
+        "description": "Fill type",
+        "options": {
+            "Solid color": "solid",
+            "Two-color gradient": "gradient"
+        }
+    },
+    "separator-color": {
+        "type": "colorchooser",
+        "default": "rgb(128,128,128)",
+        "description": "Fill color (first gradient stop)"
+    },
+    "gradient-color": {
+        "type": "colorchooser",
+        "default": "rgb(0,0,0)",
+        "description": "Second gradient color",
+        "dependency": "fill-type=gradient"
+    },
+    "gradient-angle": {
+        "type": "spinbutton",
+        "default": 0,
+        "min": 0,
+        "max": 360,
+        "step": 5,
+        "units": "°",
+        "description": "Gradient angle",
+        "tooltip": "0° runs left to right, 90° top to bottom, 180° right to left, 270° bottom to top.",
+        "dependency": "fill-type=gradient"
+    },
+    "show-fill": {
+        "type": "checkbox",
+        "default": true,
+        "description": "Show fill color",
+        "tooltip": "Turn off to make the separator fully transparent while keeping the gap it creates."
+    },
+    "fill-opacity": {
+        "type": "spinbutton",
+        "default": 100,
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "units": "%",
+        "description": "Fill opacity",
+        "dependency": "show-fill"
+    }
+}

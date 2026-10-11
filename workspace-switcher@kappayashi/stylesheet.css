@@ -1,0 +1,96 @@
+.workspace-switcher {
+    /* Base spacing between workspace buttons */
+    spacing: 10px; 
+    padding: 0px 4px;
+}
+
+/* ---------------------------------------------------- */
+/* --- 1. DISPLAYING NAMES ('buttons' mode) ----------- */
+/* ---------------------------------------------------- */
+
+/* Base styles applied to the container for NAME display */
+.workspace-name-button {
+    /* 1. Force remove borders and background colors */
+    border: none !important;
+    background-color: transparent !important; 
+    
+    border-radius: 0px !important; 
+    
+    /* 2. Deactivated color: 50% white */
+    color: rgba(255, 255, 255, 0.5) !important; 
+    
+    /* 3. Padding: 2px */
+    padding: 2px; 
+    
+    font-weight: bold;
+    min-width: 10px; 
+    min-height: 20px;
+    transition-duration: 150ms;
+}
+
+/* Hover state for name display */
+.workspace-name-button:hover {
+    background-color: transparent !important; 
+    /* Hover color: White */
+    color: #FFFFFF !important;
+}
+
+/* Active state for name display (Red) */
+.workspace-name-button.active {
+    background-color: transparent !important; /* Force remove active background */
+    /* Current color: White */
+    color: #FFFFFF !important; /* Force Red color for active */
+    border-color: transparent !important;
+    box-shadow: none !important; /* Force remove shadow */
+}
+
+/* Shading for empty workspaces */
+.workspace-name-button:shaded {
+    opacity: 0.6;
+}
+
+/* ------------------------------------------------------ */
+/* --- 2. VISUAL INDICATORS ('indicators' mode) --------- */
+/* ------------------------------------------------------ */
+
+/* Main container (St.Bin) for the INDICATOR display */
+.workspace-indicator-button {
+    border: none !important;
+    background-color: transparent !important; 
+    border-radius: 0px !important; 
+    box-shadow: none !important;
+    
+    /* Center the indicator vertically in the panel */
+    padding: 0px !important;
+    min-width: 0px !important;
+    min-height: 0px !important;
+}
+
+/* The actual visual indicator (St.DrawingArea) - Base size is for the circle */
+.workspace-indicator {
+    height: 8px; /* Height is constant for the vertical centering */
+    width: 8px; /* Base width for the circle */
+    
+    /* CRITICAL: ONLY keep the transition property here. */
+    /* All other style properties (background-color, border-radius, etc.) are drawn in JS. */
+    transition-property: width;
+    transition-duration: 250ms;
+}
+
+/* Hover state: Indicator scales to a Pill shape */
+.workspace-indicator-button:hover .workspace-indicator {
+    width: 20px; /* Pill width */
+}
+
+
+/* Active state: Indicator is a bright White Pill shape */
+.workspace-indicator-button.active .workspace-indicator {
+    width: 20px; /* Pill width */
+}
+
+
+/* Shading for empty workspaces */
+.workspace-indicator-button:shaded .workspace-indicator {
+    /* When shaded, we force the base circle width (though it should already be 8px) */
+    width: 8px; 
+}

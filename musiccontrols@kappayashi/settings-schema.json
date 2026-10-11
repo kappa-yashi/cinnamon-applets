@@ -1,0 +1,8 @@
+{
+    "hover-color": {
+        "type": "colorchooser",
+        "default": "rgb(128,128,128)",
+        "description": "Hover color for the control buttons",
+        "tooltip": "Color applied to the previous / play-pause / next icons while the mouse is over them. The default matches the original grey."
+    }
+}

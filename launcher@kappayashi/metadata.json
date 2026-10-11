@@ -1,0 +1,31 @@
+{
+    "uuid": "launcher@kappayashi",
+    "name": "kappa.yashi Launcher",
+    "description": "A minimal panel button with a custom SVG icon and a transparent background. Set the icon size, a hover colour (applied to the icon, a background pill, or both) and a command to run on click - e.g. to launch ulauncher or any other tool.",
+    "version": "1.0.0",
+    "max-instances": -1,
+    "panel-positions": [
+        "top",
+        "bottom",
+        "left",
+        "right"
+    ],
+    "location": "panel",
+    "multiversion": false,
+    "author": "kappa.yashi",
+    "license": "MIT",
+    "cinnamon-version": [
+        "4.0",
+        "4.2",
+        "4.4",
+        "4.6",
+        "4.8",
+        "5.0",
+        "5.2",
+        "5.4",
+        "5.6",
+        "5.8",
+        "6.0",
+        "6.2"
+    ]
+}

@@ -1,0 +1,30 @@
+/* kappa.yashi Window List
+ * When custom styling is enabled the button actor gets the .kappayashi-flat
+ * class. These rules strip the theme's running-indicator line and any
+ * focus/active background so we can paint our own hover colour and indicator
+ * inline from the settings. Hover background is intentionally NOT forced here,
+ * so the inline hover colour set in JS can take effect.
+ */
+
+.grouped-window-list-item-box.kappayashi-flat,
+.grouped-window-list-item-box.kappayashi-flat:hover,
+.grouped-window-list-item-box.kappayashi-flat:focus,
+.grouped-window-list-item-box.kappayashi-flat.active,
+.grouped-window-list-item-box.kappayashi-flat.top,
+.grouped-window-list-item-box.kappayashi-flat.bottom,
+.grouped-window-list-item-box.kappayashi-flat.left,
+.grouped-window-list-item-box.kappayashi-flat.right {
+    border: 0 none transparent !important;
+    border-image: none !important;
+    box-shadow: none !important;
+    background-image: none !important;
+    background-gradient-start: rgba(0, 0, 0, 0) !important;
+    background-gradient-end: rgba(0, 0, 0, 0) !important;
+}
+
+/* Flatten the focus/active background so only our own hover colour shows.
+   :hover is deliberately excluded so the inline hover colour wins. */
+.grouped-window-list-item-box.kappayashi-flat:focus,
+.grouped-window-list-item-box.kappayashi-flat.active {
+    background-color: rgba(0, 0, 0, 0) !important;
+}

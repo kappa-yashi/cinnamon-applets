@@ -1,0 +1,31 @@
+{
+    "uuid": "separator@kappayashi",
+    "name": "kappa.yashi Separator",
+    "description": "Adjustable colored separator/spacer for the panel. Set its size as a percentage of its zone (or of the panel length) and pick a fill color and opacity to create colored gaps between other applets.",
+    "version": "1.0.0",
+    "max-instances": -1,
+    "panel-positions": [
+        "top",
+        "bottom",
+        "left",
+        "right"
+    ],
+    "location": "panel",
+    "multiversion": false,
+    "author": "kappa.yashi",
+    "license": "MIT",
+    "cinnamon-version": [
+        "4.0",
+        "4.2",
+        "4.4",
+        "4.6",
+        "4.8",
+        "5.0",
+        "5.2",
+        "5.4",
+        "5.6",
+        "5.8",
+        "6.0",
+        "6.2"
+    ]
+}

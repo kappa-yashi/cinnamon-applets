@@ -1,0 +1,543 @@
+{
+    "gen": {
+        "type": "header",
+        "description": "General"
+    },
+    "panelIcon": {
+        "type": "iconfilechooser",
+        "description": "Panel icon",
+        "default": "system-shutdown-symbolic"
+    },
+    "panelText": {
+        "type": "entry",
+        "description": "Panel text",
+        "default": ""
+    },
+    "actions": {
+        "type": "header",
+        "description": "Actions to show"
+    },
+    "showShutDown": {
+        "type": "checkbox",
+        "description": "Shut Down",
+        "default": true
+    },
+    "iconShutDown": {
+        "type": "filechooser",
+        "description": "    ↳ Custom icon for Shut Down (SVG, optional)",
+        "default": "",
+        "select-dir": false,
+        "tooltip": "Leave empty to use the built-in icon. Use a symbolic/monochrome SVG so the icon colours apply.",
+        "dependency": "showShutDown=true"
+    },
+    "showRestart": {
+        "type": "checkbox",
+        "description": "Restart",
+        "default": true
+    },
+    "iconRestart": {
+        "type": "filechooser",
+        "description": "    ↳ Custom icon for Restart (SVG, optional)",
+        "default": "",
+        "select-dir": false,
+        "tooltip": "Leave empty to use the built-in icon. Use a symbolic/monochrome SVG so the icon colours apply.",
+        "dependency": "showRestart=true"
+    },
+    "showLockScreen": {
+        "type": "checkbox",
+        "description": "Lock",
+        "default": true
+    },
+    "iconLock": {
+        "type": "filechooser",
+        "description": "    ↳ Custom icon for Lock (SVG, optional)",
+        "default": "",
+        "select-dir": false,
+        "tooltip": "Leave empty to use the built-in icon. Use a symbolic/monochrome SVG so the icon colours apply.",
+        "dependency": "showLockScreen=true"
+    },
+    "showSuspend": {
+        "type": "checkbox",
+        "description": "Suspend",
+        "default": true
+    },
+    "iconSuspend": {
+        "type": "filechooser",
+        "description": "    ↳ Custom icon for Suspend (SVG, optional)",
+        "default": "",
+        "select-dir": false,
+        "tooltip": "Leave empty to use the built-in icon. Use a symbolic/monochrome SVG so the icon colours apply.",
+        "dependency": "showSuspend=true"
+    },
+    "showSleep": {
+        "type": "checkbox",
+        "description": "Sleep",
+        "default": false
+    },
+    "iconSleep": {
+        "type": "filechooser",
+        "description": "    ↳ Custom icon for Sleep (SVG, optional)",
+        "default": "",
+        "select-dir": false,
+        "tooltip": "Leave empty to use the built-in icon. Use a symbolic/monochrome SVG so the icon colours apply.",
+        "dependency": "showSleep=true"
+    },
+    "showHibernate": {
+        "type": "checkbox",
+        "description": "Hibernate",
+        "default": false
+    },
+    "iconHibernate": {
+        "type": "filechooser",
+        "description": "    ↳ Custom icon for Hibernate (SVG, optional)",
+        "default": "",
+        "select-dir": false,
+        "tooltip": "Leave empty to use the built-in icon. Use a symbolic/monochrome SVG so the icon colours apply.",
+        "dependency": "showHibernate=true"
+    },
+    "showLogOff": {
+        "type": "checkbox",
+        "description": "Log Off",
+        "default": true
+    },
+    "iconLogOff": {
+        "type": "filechooser",
+        "description": "    ↳ Custom icon for Log Off (SVG, optional)",
+        "default": "",
+        "select-dir": false,
+        "tooltip": "Leave empty to use the built-in icon. Use a symbolic/monochrome SVG so the icon colours apply.",
+        "dependency": "showLogOff=true"
+    },
+    "showSwitchUser": {
+        "type": "checkbox",
+        "description": "Switch User",
+        "default": false
+    },
+    "iconSwitchUser": {
+        "type": "filechooser",
+        "description": "    ↳ Custom icon for Switch User (SVG, optional)",
+        "default": "",
+        "select-dir": false,
+        "tooltip": "Leave empty to use the built-in icon. Use a symbolic/monochrome SVG so the icon colours apply.",
+        "dependency": "showSwitchUser=true"
+    },
+    "showGuestSession": {
+        "type": "checkbox",
+        "description": "Guest Session",
+        "default": false
+    },
+    "iconGuest": {
+        "type": "filechooser",
+        "description": "    ↳ Custom icon for Guest Session (SVG, optional)",
+        "default": "",
+        "select-dir": false,
+        "tooltip": "Leave empty to use the built-in icon. Use a symbolic/monochrome SVG so the icon colours apply.",
+        "dependency": "showGuestSession=true"
+    },
+    "bg": {
+        "type": "header",
+        "description": "Fullscreen background"
+    },
+    "backgroundColor": {
+        "type": "colorchooser",
+        "description": "Background colour",
+        "default": "rgb(20,25,40)"
+    },
+    "backgroundOpacity": {
+        "type": "spinbutton",
+        "description": "Background opacity",
+        "default": 85,
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "units": "%"
+    },
+    "showUptime": {
+        "type": "checkbox",
+        "description": "Show uptime label",
+        "default": true
+    },
+    "useBackgroundImage": {
+        "type": "checkbox",
+        "description": "Use background image",
+        "default": false
+    },
+    "backgroundImage": {
+        "type": "filechooser",
+        "description": "Background image (optional)",
+        "default": "",
+        "select-dir": false,
+        "tooltip": "PNG/JPG/SVG. Leave empty for a plain colour background. The background colour + opacity act as a dim/tint on top.",
+        "dependency": "useBackgroundImage=true"
+    },
+    "backgroundImageSize": {
+        "type": "combobox",
+        "description": "Image fit",
+        "default": "cover",
+        "options": {
+            "Cover (fill, may crop)": "cover",
+            "Fit (contain)": "fit",
+            "Stretch": "stretch"
+        },
+        "dependency": "useBackgroundImage=true"
+    },
+    "noiseEnabled": {
+        "type": "checkbox",
+        "description": "Add noise / grain",
+        "default": false
+    },
+    "noiseMode": {
+        "type": "combobox",
+        "description": "Grain style",
+        "default": "normal",
+        "options": {
+            "Normal (gray)": "normal",
+            "Light (screen-like)": "light",
+            "Dark (multiply-like)": "dark",
+            "Overlay (contrast)": "overlay",
+            "Soft (fine, subtle)": "soft",
+            "Colored": "colored",
+            "Color noise (RGB / VHS)": "rgb"
+        },
+        "dependency": "noiseEnabled=true"
+    },
+    "noiseColor": {
+        "type": "colorchooser",
+        "description": "Grain colour",
+        "default": "rgb(150,90,255)",
+        "dependency": "noiseMode=colored"
+    },
+    "noiseOpacity": {
+        "type": "spinbutton",
+        "description": "Grain opacity",
+        "default": 15,
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "units": "%",
+        "dependency": "noiseEnabled=true"
+    },
+    "noiseGrain": {
+        "type": "spinbutton",
+        "description": "Grain size",
+        "default": 1,
+        "min": 1,
+        "max": 6,
+        "step": 1,
+        "units": "px",
+        "dependency": "noiseEnabled=true"
+    },
+    "btn": {
+        "type": "header",
+        "description": "Buttons"
+    },
+    "buttonSize": {
+        "type": "spinbutton",
+        "description": "Button size",
+        "default": 120,
+        "min": 48,
+        "max": 320,
+        "step": 4,
+        "units": "px"
+    },
+    "buttonSpacing": {
+        "type": "spinbutton",
+        "description": "Spacing between buttons",
+        "default": 40,
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "units": "px"
+    },
+    "buttonRoundness": {
+        "type": "spinbutton",
+        "description": "Roundness (100 = circle)",
+        "default": 100,
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "units": "%"
+    },
+    "buttonBgColor": {
+        "type": "colorchooser",
+        "description": "Button background colour",
+        "default": "rgb(255,255,255)"
+    },
+    "buttonBgOpacity": {
+        "type": "spinbutton",
+        "description": "Button background opacity",
+        "default": 8,
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "units": "%"
+    },
+    "hoverBgColor": {
+        "type": "colorchooser",
+        "description": "Hover background colour",
+        "default": "rgb(255,255,255)"
+    },
+    "hoverBgOpacity": {
+        "type": "spinbutton",
+        "description": "Hover background opacity",
+        "default": 15,
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "units": "%"
+    },
+    "hoverOutline": {
+        "type": "checkbox",
+        "description": "Outline on hover",
+        "default": true
+    },
+    "hoverOutlineColor": {
+        "type": "colorchooser",
+        "description": "Hover outline colour",
+        "default": "rgb(150,90,255)",
+        "dependency": "hoverOutline=true"
+    },
+    "hoverOutlineWidth": {
+        "type": "spinbutton",
+        "description": "Hover outline width",
+        "default": 2,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "units": "px",
+        "dependency": "hoverOutline=true"
+    },
+    "ic": {
+        "type": "header",
+        "description": "Icons"
+    },
+    "iconSize": {
+        "type": "spinbutton",
+        "description": "Icon size",
+        "default": 48,
+        "min": 16,
+        "max": 160,
+        "step": 2,
+        "units": "px"
+    },
+    "iconColor": {
+        "type": "colorchooser",
+        "description": "Icon colour",
+        "default": "rgb(255,255,255)"
+    },
+    "twoColorIcons": {
+        "type": "checkbox",
+        "description": "Use a separate hover colour",
+        "default": true
+    },
+    "iconHoverColor": {
+        "type": "colorchooser",
+        "description": "Icon hover colour",
+        "default": "rgb(150,90,255)",
+        "dependency": "twoColorIcons=true"
+    },
+    "labelUnder": {
+        "type": "checkbox",
+        "description": "Show label under each icon",
+        "default": false
+    },
+    "labelColor": {
+        "type": "colorchooser",
+        "description": "Label colour",
+        "default": "rgb(220,220,230)"
+    },
+    "perIconColors": {
+        "type": "checkbox",
+        "default": false,
+        "description": "Per-icon colours (each icon its own set)",
+        "tooltip": "Off: the global icon colours above apply to every icon. On: each action uses its own colours below."
+    },
+    "perIconHeader": {
+        "type": "label",
+        "description": "Per-icon colours",
+        "dependency": "perIconColors=true"
+    },
+    "colorShutDown": {
+        "type": "colorchooser",
+        "description": "Shut Down colour",
+        "default": "rgb(255,255,255)",
+        "dependency": "perIconColors=true"
+    },
+    "colorHoverShutDown": {
+        "type": "colorchooser",
+        "description": "Shut Down hover colour",
+        "default": "rgb(150,90,255)",
+        "dependency": "perIconColors=true"
+    },
+    "colorRestart": {
+        "type": "colorchooser",
+        "description": "Restart colour",
+        "default": "rgb(255,255,255)",
+        "dependency": "perIconColors=true"
+    },
+    "colorHoverRestart": {
+        "type": "colorchooser",
+        "description": "Restart hover colour",
+        "default": "rgb(150,90,255)",
+        "dependency": "perIconColors=true"
+    },
+    "colorLock": {
+        "type": "colorchooser",
+        "description": "Lock colour",
+        "default": "rgb(255,255,255)",
+        "dependency": "perIconColors=true"
+    },
+    "colorHoverLock": {
+        "type": "colorchooser",
+        "description": "Lock hover colour",
+        "default": "rgb(150,90,255)",
+        "dependency": "perIconColors=true"
+    },
+    "colorSuspend": {
+        "type": "colorchooser",
+        "description": "Suspend colour",
+        "default": "rgb(255,255,255)",
+        "dependency": "perIconColors=true"
+    },
+    "colorHoverSuspend": {
+        "type": "colorchooser",
+        "description": "Suspend hover colour",
+        "default": "rgb(150,90,255)",
+        "dependency": "perIconColors=true"
+    },
+    "colorSleep": {
+        "type": "colorchooser",
+        "description": "Sleep colour",
+        "default": "rgb(255,255,255)",
+        "dependency": "perIconColors=true"
+    },
+    "colorHoverSleep": {
+        "type": "colorchooser",
+        "description": "Sleep hover colour",
+        "default": "rgb(150,90,255)",
+        "dependency": "perIconColors=true"
+    },
+    "colorHibernate": {
+        "type": "colorchooser",
+        "description": "Hibernate colour",
+        "default": "rgb(255,255,255)",
+        "dependency": "perIconColors=true"
+    },
+    "colorHoverHibernate": {
+        "type": "colorchooser",
+        "description": "Hibernate hover colour",
+        "default": "rgb(150,90,255)",
+        "dependency": "perIconColors=true"
+    },
+    "colorLogOff": {
+        "type": "colorchooser",
+        "description": "Log Off colour",
+        "default": "rgb(255,255,255)",
+        "dependency": "perIconColors=true"
+    },
+    "colorHoverLogOff": {
+        "type": "colorchooser",
+        "description": "Log Off hover colour",
+        "default": "rgb(150,90,255)",
+        "dependency": "perIconColors=true"
+    },
+    "colorSwitchUser": {
+        "type": "colorchooser",
+        "description": "Switch User colour",
+        "default": "rgb(255,255,255)",
+        "dependency": "perIconColors=true"
+    },
+    "colorHoverSwitchUser": {
+        "type": "colorchooser",
+        "description": "Switch User hover colour",
+        "default": "rgb(150,90,255)",
+        "dependency": "perIconColors=true"
+    },
+    "colorGuest": {
+        "type": "colorchooser",
+        "description": "Guest colour",
+        "default": "rgb(255,255,255)",
+        "dependency": "perIconColors=true"
+    },
+    "colorHoverGuest": {
+        "type": "colorchooser",
+        "description": "Guest hover colour",
+        "default": "rgb(150,90,255)",
+        "dependency": "perIconColors=true"
+    },
+    "animHeader": {
+        "type": "label",
+        "description": "Animation",
+        "dependency": "fadeIn=true"
+    },
+    "fadeIn": {
+        "type": "checkbox",
+        "description": "Fade in when opening",
+        "default": true
+    },
+    "fadeDuration": {
+        "type": "spinbutton",
+        "description": "Animation duration",
+        "default": 200,
+        "min": 0,
+        "max": 1000,
+        "step": 25,
+        "units": "ms",
+        "dependency": "fadeIn=true"
+    },
+    "easing": {
+        "type": "combobox",
+        "description": "Easing",
+        "default": "ease-out",
+        "options": {
+            "Ease": "ease",
+            "Ease-in": "ease-in",
+            "Ease-out": "ease-out",
+            "Ease-in-out": "ease-in-out",
+            "Linear": "linear",
+            "Sine": "sine",
+            "Custom cubic-bezier": "custom"
+        },
+        "dependency": "fadeIn=true"
+    },
+    "bezierX1": {
+        "type": "spinbutton",
+        "description": "Bezier x1",
+        "default": 0.25,
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "units": "",
+        "dependency": "easing=custom"
+    },
+    "bezierY1": {
+        "type": "spinbutton",
+        "description": "Bezier y1",
+        "default": 0.1,
+        "min": -1,
+        "max": 2,
+        "step": 0.01,
+        "units": "",
+        "dependency": "easing=custom"
+    },
+    "bezierX2": {
+        "type": "spinbutton",
+        "description": "Bezier x2",
+        "default": 0.25,
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "units": "",
+        "dependency": "easing=custom"
+    },
+    "bezierY2": {
+        "type": "spinbutton",
+        "description": "Bezier y2",
+        "default": 1.0,
+        "min": -1,
+        "max": 2,
+        "step": 0.01,
+        "units": "",
+        "dependency": "easing=custom"
+    }
+}
