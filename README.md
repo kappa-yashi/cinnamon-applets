@@ -117,13 +117,17 @@ suspend, log off, and more.
 
 ## Screenshots
 
-_Previews live in [`screenshots/`](screenshots/)._
+Real panels, built only with these applets — Separator (shaped edges + passive
+fill), Workspace Switcher (pill indicators) and Media Controls:
 
-| | |
-|---|---|
-| Separator | ![Separator](screenshots/separator@kappayashi.png) |
-| Session Manager | ![Session Manager](screenshots/sessionManager@kappayashi.png) |
-| Window List | ![Window List](screenshots/grouped-window-list@kappayashi.png) |
+![Panel showcase](screenshots/panels-detail.png)
+
+<details>
+<summary>Full-width panels</summary>
+
+![Full panels](screenshots/panels.png)
+
+</details>
 
 ---
 
@@ -139,4 +143,4 @@ See [`CREDITS.md`](CREDITS.md) for origins and attribution.
 ## Support
 
 If these are useful to you, you can support the project through the
-kappa.yashi site: **[kappayashi.page](https://kappayashi.page)**.
+kappa.yashi site: **[www.kappayashi.page](https://www.kappayashi.page)**.
