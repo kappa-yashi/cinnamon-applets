@@ -1,0 +1,22 @@
+{
+    "uuid": "sessionManager@kappayashi",
+    "name": "kappa.yashi Session Manager",
+    "description": "Fullscreen session manager (shut down, restart, lock, suspend, log off and more) with a customisable overlay: flat or blurred background, circular buttons, custom icon and hover colours. Fork of Session Manager by collinss (GPL).",
+    "author": "kappa.yashi",
+    "max-instances": -1,
+    "version": "1.0.0",
+    "cinnamon-version": [
+        "4.0",
+        "4.2",
+        "4.4",
+        "4.6",
+        "4.8",
+        "5.0",
+        "5.2",
+        "5.4",
+        "5.6",
+        "5.8",
+        "6.0",
+        "6.2"
+    ]
+}

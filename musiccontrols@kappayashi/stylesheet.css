@@ -1,0 +1,72 @@
+/* Main applet container */
+.mediacontrols-applet {
+    spacing: 4px; /* Space between the controls container and the menu icon */
+}
+
+/* MODIFICATION: Make the entire applet background transparent on hover */
+.mediacontrols-applet:hover,
+.mediacontrols-applet:active,
+.mediacontrols-applet:focus {
+    background-color: transparent !important;
+}
+
+/* Container for all player controls (icon, buttons, text) */
+.mediacontrols-controls-container {
+    spacing: 3px; /* Space between control elements */
+}
+
+/* Player's application icon */
+.mediacontrols-player-icon {
+    padding-right: 5px;
+    icon-size: 16px;
+}
+
+/* Common style for all buttons */
+.mediacontrols-button {
+    /* To ensure only the icon color changes, ensure no background is set here,
+       or set it to transparent if needed for layout. */
+    background-color: transparent;
+    border: none; /* Remove any default button borders */
+    padding: 2px; /* Adjust padding as needed for clickable area */
+}
+
+/* Hover color for the control buttons is now set from the applet settings
+   (see the "Hover color" option). It is applied inline via JavaScript on
+   mouse-over, so no static :hover rule is needed here. */
+
+/* Individual button styles */
+.mediacontrols-previous-button StIcon {
+    color: white; /* Default color for previous icon */
+}
+
+.mediacontrols-playpause-button StIcon {
+    color: white; /* Default color for play/pause icon */
+}
+
+.mediacontrols-next-button StIcon {
+    color: white; /* Default color for next icon */
+}
+
+/* Container for the artist/title text */
+.mediacontrols-media-info {
+    padding-left: 5px;
+}
+
+/* The artist/title text label itself */
+.mediacontrols-media-info > StLabel {
+    color: white; /* Default color for the text */
+}
+
+/* The dropdown menu icon (arrow) */
+.mediacontrols-menu-icon {
+    padding-left: 2px;
+}
+
+/* MODIFICATION: Default color for the menu icon and hover effect */
+.mediacontrols-menu-icon {
+    color: white; /* Default color for the menu arrow */
+}
+
+.mediacontrols-menu-icon:hover {
+    color: red; /* Hover color for the menu arrow */
+}

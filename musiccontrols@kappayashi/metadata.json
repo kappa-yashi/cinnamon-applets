@@ -1,0 +1,16 @@
+{
+    "uuid": "musiccontrols@kappayashi",
+    "name": "kappa.yashi Media Controls",
+    "description": "Minimal MPRIS2 media controls for the panel: previous / play-pause / next, track info, and a player switcher. Browser players are ignored by default, and the button hover color is configurable.",
+    "version": "1.0.0",
+    "max-instances": 1,
+    "panel-positions": [
+        "top",
+        "bottom"
+    ],
+    "location": "panel",
+    "multiversion": false,
+    "author": "kappa.yashi",
+    "license": "MIT",
+    "last-edited": 1785564415
+}

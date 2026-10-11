@@ -1,0 +1,12 @@
+.kappayashi-launcher-box {
+    background-color: transparent;
+}
+
+/* Transparent button; the hover fill is applied inline from settings. */
+.kappayashi-launcher-button {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 2px;
+    transition-duration: 120ms;
+}

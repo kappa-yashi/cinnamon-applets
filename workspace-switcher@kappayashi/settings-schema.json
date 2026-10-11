@@ -1,0 +1,36 @@
+{
+    "display-type": {
+        "type": "combobox",
+        "default": "buttons",
+        "description": "Type of display",
+        "tooltip": "Note that the visual representation will only work if your panel is large enough to display it properly, otherwise the simple style will be used.",
+        "options": {
+            "A visual representation of the workspaces": "visual",
+            "Visual Indicators (Bullets/Pills)": "indicators",
+            "Simple buttons (Displaying Names)": "buttons"
+        }
+    },
+    "scroll-behavior": {
+        "type": "combobox",
+        "default": "normal",
+        "description": "Scroll wheel behavior",
+        "tooltip": "Reverse or disable the direction of the scroll in the workspace list.",
+        "options": {
+            "Normal": "normal",
+            "Reversed": "reversed",
+            "Disabled": "disabled"
+        }
+    },
+    "use-accent-color": {
+        "type": "checkbox",
+        "default": false,
+        "description": "Use a custom accent color for the active workspace",
+        "tooltip": "When enabled, only the active workspace is tinted with the accent color below. All other workspaces keep the default white/grey styling."
+    },
+    "accent-color": {
+        "type": "colorchooser",
+        "default": "rgb(126,200,80)",
+        "description": "Accent color",
+        "dependency": "use-accent-color"
+    }
+}

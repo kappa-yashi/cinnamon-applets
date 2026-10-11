@@ -1,0 +1,99 @@
+{
+    "icon-source": {
+        "type": "combobox",
+        "default": "file",
+        "description": "Icon source",
+        "options": {
+            "From a file": "file",
+            "By name or path": "name"
+        }
+    },
+    "icon-file": {
+        "type": "filechooser",
+        "default": "",
+        "description": "Icon file (SVG / PNG)",
+        "select-dir": false,
+        "dependency": "icon-source=file"
+    },
+    "icon-name": {
+        "type": "entry",
+        "default": "",
+        "description": "Icon name or full path",
+        "tooltip": "A themed icon name (e.g. system-run-symbolic) or an absolute path to an image file.",
+        "dependency": "icon-source=name"
+    },
+    "symbolic-icon": {
+        "type": "checkbox",
+        "default": true,
+        "description": "Symbolic icon (recolourable)",
+        "tooltip": "Treat the icon as monochrome so it can be tinted. Required for the hover colour to affect the icon itself. Turn off for full-colour icons that should keep their original colours."
+    },
+    "icon-color": {
+        "type": "colorchooser",
+        "default": "rgb(255,255,255)",
+        "description": "Icon colour",
+        "dependency": "symbolic-icon=true"
+    },
+    "icon-size": {
+        "type": "spinbutton",
+        "default": 22,
+        "min": 8,
+        "max": 256,
+        "step": 1,
+        "units": "px",
+        "description": "Icon size"
+    },
+    "hover-color": {
+        "type": "colorchooser",
+        "default": "rgb(0,150,255)",
+        "description": "Hover colour (icon)"
+    },
+    "hover-bg-color": {
+        "type": "colorchooser",
+        "default": "rgb(255,255,255)",
+        "description": "Hover colour (background)"
+    },
+    "hover-target": {
+        "type": "combobox",
+        "default": "icon",
+        "description": "Apply hover colour to",
+        "options": {
+            "The icon": "icon",
+            "The background": "background",
+            "Both": "both"
+        }
+    },
+    "background-radius": {
+        "type": "spinbutton",
+        "default": 6,
+        "min": 0,
+        "max": 64,
+        "step": 1,
+        "units": "px",
+        "description": "Background corner radius (hover)"
+    },
+    "command-source": {
+        "type": "combobox",
+        "default": "browse",
+        "description": "Action on click",
+        "options": {
+            "Pick an application (browse)": "browse",
+            "Type a command": "command"
+        }
+    },
+    "command-file": {
+        "type": "filechooser",
+        "default": "",
+        "description": "Application (.desktop or executable)",
+        "select-dir": false,
+        "tooltip": "Browse to an application. Tip: .desktop files live in /usr/share/applications.",
+        "dependency": "command-source=browse"
+    },
+    "command": {
+        "type": "entry",
+        "default": "",
+        "description": "Command to run on click",
+        "tooltip": "e.g. ulauncher-toggle",
+        "dependency": "command-source=command"
+    }
+}

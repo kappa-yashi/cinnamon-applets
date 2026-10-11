@@ -1,0 +1,23 @@
+{
+    "name": "kappa.yashi Window List",
+    "role": "panellauncher, windowattentionhandler",
+    "uuid": "grouped-window-list@kappayashi",
+    "description": "Grouped window list with app grouping, restyled by kappa.yashi: flat transparent buttons, no theme underline, custom hover colours, an optional running indicator you control, and a name-only (icon hidden) mode. Fork of the built-in grouped-window-list (GPL).",
+    "author": "kappa.yashi",
+    "max-instances": -1,
+    "version": "1.0.0",
+    "cinnamon-version": [
+        "4.0",
+        "4.2",
+        "4.4",
+        "4.6",
+        "4.8",
+        "5.0",
+        "5.2",
+        "5.4",
+        "5.6",
+        "5.8",
+        "6.0",
+        "6.2"
+    ]
+}
